@@ -1,9 +1,19 @@
+server:
+  port : 8099
 spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+    show-sql: true
+  datasource:
+    url: jdbc:mysql://localhost:3306/bank
+    username: root
+    password: cr203232
   application:
     name: clientservice
-  config:
-    import:
-      - optional:configserver:http://localhost:8888
 eureka:
   client:
     service-url:
